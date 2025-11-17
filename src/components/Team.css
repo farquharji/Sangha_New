@@ -1,0 +1,333 @@
+/* ===== HERO SECTION ===== */
+.team-hero {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.team-hero-img {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+  filter: brightness(0.9) saturate(1.1);
+}
+
+.team-hero-overlay {
+  position: absolute;
+  inset: 0;
+}
+
+
+.team-hero-text {
+  text-align: center;
+  color: var(--brown);
+  padding: 2rem 1rem;
+}
+.team-hero-text h1 {
+  margin-bottom: 0.5rem; /* reduce spacing under title */
+}
+
+.team-hero-text {
+  width: 45%;            /* ensure full width */
+  max-width: none !important; /* remove 80% constraint */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1rem;        /* gentle side spacing */
+}
+
+/* Center the text inside, not the container */
+.team-hero-text h1,
+.team-hero-description {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+.team-hero-description {
+  margin-top: 0.2rem; /* tighten spacing above the paragraph */
+
+}
+
+
+.team-hero-description {
+  display: inline-block;
+  background: rgba(75, 46, 5, 0.35); /* warm brown with transparency */
+  color: #FFF9E8; /* light cream text */
+  padding: 0.6rem 1.2rem;
+  border-radius: 6px;
+  backdrop-filter: blur(2px);
+  font-size: 1.15rem;
+  line-height: 1.6;
+  margin-top: 0.2rem; /* tightened spacing */
+}
+
+
+
+/* ===== HERO TEXT ===== */
+.team-hero-text {
+  font-family: 'Marcellus', serif;
+  position: absolute;
+  bottom: 12%;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #FFF9E8;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-align: center;
+  max-width: 90%;
+  line-height: 1.5;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+/* SOCIAL ICON GROUP */
+.social-links {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 10px;
+}
+
+.social-links a {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  font-size: 1.8rem;
+  border-radius: 50%;
+  color: #4B2E05;
+  opacity: 0.8;
+  transition: all 0.25s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.15);
+  color: #E4B432;
+  opacity: 1;
+}
+
+/* CONTENT BACKGROUND GRADIENT */
+.team-content {
+  background: linear-gradient(
+    180deg,
+    #E5D2A5 0%,
+    #F5C14C22 25%,
+    #FFF9E8 55%,
+    #E4B43222 85%,
+    #C97A48 100%
+  );
+  padding: 4rem 2rem;
+  text-align: center;
+  color: #4B2E05;
+}
+
+.team-content h1 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.team-content .intro {
+  max-width: 700px;
+  margin: 0 auto 3rem auto;
+  font-size: 1.1rem;
+  line-height: 1.6;
+}
+
+/* TEAM GRID */
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  justify-items: center;
+  padding: 1rem;
+}
+
+/* TEAM CARD */
+.team-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 1.5rem;
+  max-width: 280px;
+  transition: transform 0.3s ease;
+}
+
+
+/* Fix right-edge crowding on mobile */
+
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 0 0.5rem;   /* smaller, even margins */
+    width: 100%;
+    margin: 0 auto;      /* CENTER the grid */
+    justify-items: center;
+  }
+
+  .team-card {
+    max-width: 160px;    /* evenly sized */
+    padding: 0.6rem;
+  }
+
+  .team-card img {
+    width: 120px;
+    height: 120px;
+  }
+}
+
+
+  .team-card {
+    width: 100%;
+    max-width: 180px; /* prevents stretching */
+  }
+
+
+.team-card:hover {
+  transform: translateY(-5px);
+}
+
+.team-card img {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.6rem;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.team-card h2 {
+  color: #4B2E05;
+  font-size: 1.4rem;
+  margin-bottom: 0.7rem;
+  line-height: 1.1;
+}
+
+.team-card p {
+  color: #4B2E05;
+  font-size: 1rem;
+  margin: 0;
+  line-height: 1.1;
+}
+
+.team-card p strong {
+  display: block;
+  line-height: 1.05;
+  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+}
+
+.team-card .insta-link {
+  color: #E4B2;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.team-card .insta-link:hover {
+  color: #F5C14C;
+}
+
+.intro {
+ max-width: 100%;
+ margin-top: 40px;
+}
+
+/* Remove link styling inside team cards */
+.team-card a,
+.team-card .profile-link,
+.team-card .profile-link h2,
+.team-card .profile-link p {
+  color: inherit !important;
+  text-decoration: none !important;
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .team-hero {
+    height: 60vh;
+  }
+
+  .team-hero-text {
+    font-size: 1.1rem;
+    bottom: 5%;
+   max-width: 100%; /* was 80% → allows the text to breathe */
+  }
+  .team-hero-text {
+  width: 70%;            /* ensure full width */
+  max-width: none !important; /* remove 80% constraint */
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 1rem;        /* gentle side spacing */
+}
+
+  .team-content {
+    padding: 3rem 1.5rem;
+  }
+
+  .team-hero-description {
+    display: block; /* allows full width without squishing */
+    max-width: 90%; /* keeps a nice margin from screen edges */
+    margin: 0.1rem auto; /* center it beautifully */
+    padding: 0.2rem 1rem; /* slightly less horizontal padding to reduce height */
+    font-size: 1.1rem; /* optional: smoother on small screens */
+  }
+}
+
+@media (max-width: 1000px) {
+  .team-hero {
+    height: 55vh;
+    position: relative;
+  }
+
+  .team-hero-img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .team-hero-text {
+    bottom: 8%;
+    font-size: 1.05rem;
+    max-width: 85%;
+  }
+
+  .team-card {
+    width: 100%;
+    max-width: 180px; /* prevents stretching */
+    padding: 0.5rem;
+  }
+
+  .team-card img {
+    width: 150px;
+    height: 150px;
+    margin-bottom: 0.4rem;
+  }
+
+  .team-card h2 {
+    font-size: 1rem;
+    margin: 0.3rem 0 0.2rem;
+  }
+
+  .team-card p {
+    font-size: 0.85rem;
+    margin: 0;
+  }
+
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* FINAL MOBILE ADJUSTMENT */
+@media (max-width: 768px) {
+  .social-links a {
+    font-size: 1.6rem;
+    margin-top: 0.5rem;
+    display: inline-flex;
+  }
+}

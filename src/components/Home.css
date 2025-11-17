@@ -1,0 +1,287 @@
+/* ===== HARD RESET ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background: #FFF9E8;
+  overflow-x: hidden;
+}
+
+.navbar {
+  z-index: 20; /* stays above hero */
+}
+
+/* ===== HOME WRAPPER ===== */
+.home {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(180deg, #FFF9E8 0%, #E5D2A5 100%);
+  color: #4B2E05;
+  font-family: "Raleway", sans-serif;
+  overflow: hidden;
+}
+
+/* ===== HERO ===== */
+.hero {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+  background: #E4B432;
+}
+
+.hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.85) saturate(1.1);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    rgba(0, 0, 0, 0.25),
+    rgba(0, 0, 0, 0.45)
+  );
+}
+/* ===== LEAD PARAGRAPH STYLE ===== */
+.home-content .lead {
+  font-size: 1.2rem;              /* slightly larger */
+  font-weight: 600;               /* semi-bold */
+  color: #FFF9E8;                 /* warm cream for clarity over hero */
+  line-height: 1.7;
+  margin-top: 0.5rem;
+  margin-bottom: 0;
+  letter-spacing: 0.2px;
+}
+
+.home-content .lead .continuation {
+  display: inline;
+  font-weight: 400;               /* lighter for flow */
+  opacity: 0.9;                   /* subtle tone difference */
+  margin-left: 0.3rem;            /* gentle spacing */
+}
+
+/* ===== FLOATING HOME CONTENT ===== */
+.home-content {
+  position: relative;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #A0522D;
+ background: rgba(240, 170, 100, 0.25);
+  border-radius: 14px;
+  padding: 2rem 1.5rem;
+  max-width: 850px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+
+}
+
+.home-content h1 {
+  font-family: "Marcellus", serif;
+  font-size: 2.4rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  color: #FFF9E8;
+  margin-bottom: 1rem;
+}
+
+.home-content p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: #FFF9E8;
+  margin-bottom: 1.5rem;
+}
+
+
+
+/* ===== BUTTONS ===== */
+.btn,
+.btn-primary {
+  display: inline-block;
+  border: none;
+  cursor: pointer;
+  padding: 0.7rem 1.4rem;
+  margin: 10px 8px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.btn {
+  background: #F5C14C;
+  color: #4B2E05;
+}
+
+.btn:hover {
+  background: #E4B432;
+  box-shadow: 0 0 10px rgba(228, 180, 50, 0.5);
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #E4B432, #F5C14C);
+  color: #4B2E05;
+}
+
+.btn-primary:hover {
+  filter: brightness(1.1);
+  box-shadow: 0 0 12px rgba(245, 193, 76, 0.6);
+}
+
+/* ===== SOCIAL ICONS ===== */
+.social {
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.4rem;
+}
+
+.social a {
+  color: #F5C14C;
+  font-size: 1.9rem;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social a:hover {
+  color: #FFF9E8;
+  transform: scale(1.2);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width: 768px) {
+  .home-content {
+    top: 55%;
+    width: 90%;
+    padding: 1.5rem 1rem;
+    background: rgba(240, 170, 100, 0.25);
+
+  }
+
+  .home-content h1 {
+    font-size: 1.7rem;
+  }
+
+  .home-content p {
+    font-size: 1rem;
+  }
+
+  .hero {
+    height: 100vh;
+    min-height: 100vh;
+  }
+
+  .home {
+    overflow-y: visible;
+  }
+}
+/* ===========================
+   MOSAIC SECTION
+   =========================== */
+.mosaic-section {
+  width: 100%;
+  padding: 2rem 1rem;
+  background: #fff9e8;
+  margin-top: 100vh; /* pushes mosaic BELOW hero */
+}
+
+.mosaic-title {
+  text-align: center;
+  font-family: "Marcellus", serif;
+  color: #4B2E05;
+  margin-bottom: 1.5rem;
+  font-size: 1.8rem;
+}
+
+/* GRID */
+.mosaic-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* mobile default */
+  gap: 6px;
+}
+
+.mosaic-item {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+/* ======== 3×3 HERO GRID ======== */
+.hero-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  width: 100%;
+  aspect-ratio: 1 / 1; /* perfect square */
+  position: relative;
+}
+
+/* Background cells */
+.hero-cell {
+  overflow: hidden;
+}
+
+.hero-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.8) saturate(1.1);
+}
+
+/* Center content sits ON TOP of middle cell */
+.center-content {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 5;
+  text-align: center;
+  padding: 2rem;
+  background: rgba(0, 0, 0, 0.45);
+  border-radius: 12px;
+  color: #FFF9E8;
+}
+
+/* Lead text */
+.lead {
+  font-size: 1.15rem;
+  margin-bottom: 1rem;
+}
+
+.lead .continuation {
+  opacity: 0.9;
+}
+
+/* Social icons */
+.social {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.social a {
+  font-size: 1.8rem;
+  color: #F5C14C;
+}
+

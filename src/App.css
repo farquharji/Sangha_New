@@ -1,0 +1,113 @@
+/* ===== GLOBAL VARIABLES ===== */
+:root {
+  --cream: #FFF9E8;
+  --clay: #E5D2A5;
+  --sunflower: #E4B432;
+  --honey: #F5C14C;
+  --brown: #4B2E05;
+  --terracotta: #C97A48;
+  --olive: #5A5533;
+  --amber: #B8852E;
+
+  --font-main: "Raleway", "Helvetica Neue", sans-serif;
+}
+
+/* ===== GLOBAL CLAMPS ===== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html, body, #root, .App {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* ===== BODY ===== */
+body {
+  font-family: var(--font-main);
+  color: var(--olive);
+  background: linear-gradient(180deg, var(--cream), var(--clay)) fixed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== IMAGES ===== */
+img, svg, video, canvas {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ===== NAVBAR (COMMENTED OUT & SAFE) =====
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background: rgba(255, 249, 232, 0.9);
+  backdrop-filter: blur(6px);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.9rem 1.5rem;
+  z-index: 1000;
+  box-shadow: 0 1px 5px rgba(75, 46, 5, 0.05);
+}
+*/
+
+/* ===== HAMBURGER ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.hamburger span {
+  width: 24px;
+  height: 3px;
+  background: var(--brown);
+  border-radius: 2px;
+}
+
+main {
+  padding: 0;
+  margin: 0;
+}
+
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 58px;
+    right: 0;
+    left: 0;
+    flex-direction: column;
+    align-items: flex-start;
+    background: rgba(255, 249, 232, 0.98);
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(0,0,0,0.06);
+  }
+
+  .nav-links.open {
+    display: flex;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ===== BUTTONS (COMMENTED & SAFE) =====
+.btn, .btn-primary {
+  ...
+}
+*/

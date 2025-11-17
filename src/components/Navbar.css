@@ -1,0 +1,177 @@
+
+
+/* ===== NAVBAR (Transparent Overlay) ===== */
+.heart-icon {
+  margin-right: 8px;
+  position: relative;
+  top: 1px;
+}
+
+.navbar {
+  position: absolute;
+  top: 1.6rem;
+  left: 0;
+  width: 100%;
+  background: rgba(228, 180, 50, 0.18);
+  backdrop-filter: blur(1px);
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.05);
+  z-index: 20;
+  padding: 0.6rem 30px;
+  font-family: 'Marcellus', serif;
+  border-bottom: 0px solid rgba(255, 249, 232, 0.15);
+  transition: background 0.4s ease, backdrop-filter 0.4s ease;
+}
+
+/* Ensure hero reaches top with no offset */
+html, body, .home {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+/* ===== INNER CONTAINER ===== */
+.nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ===== LOGO ===== */
+.nav-logo {
+  display: flex;
+  align-items: center;
+  margin-top: 5px;
+  gap: 8px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: #E7B10A;
+  letter-spacing: 0.4px;
+  white-space: nowrap;
+}
+
+.logo-img {
+  height: 50px;
+  width: auto;
+}
+
+/* ===== LINKS ===== */
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  color: #FFF9E8 !important;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  font-size: 1.25rem;
+  text-decoration: none;
+  letter-spacing: 1px;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.6);
+  transition: color 0.3s ease, transform 0.3s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.nav-links a:hover {
+  color: #F5C14C !important;
+  transform: scale(1.05);
+}
+
+/* ===== DONATE BUTTON ===== */
+.donate-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  padding: 0.25rem 1rem;
+  margin-left: 0.3rem;
+  background: #E7B10A;
+  color: #4B2E05;
+  font-weight: 400;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(75, 46, 5, 0.1);
+}
+
+.donate-btn:hover {
+  background: #F5C14C;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(75, 46, 5, 0.15);
+}
+
+.heart-icon {
+  color: #b43b3b;
+  font-size: 1rem;
+  transition: transform 0.2s ease;
+}
+
+.donate-btn:hover .heart-icon {
+  transform: scale(1.2);
+}
+
+/* ===== HAMBURGER (Desktop hidden) ===== */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #FFF9E8;
+  border-radius: 2px;
+  box-shadow: 0 0 6px rgba(255, 249, 232, 0.9);
+  transition: all 0.3s ease;
+}
+
+/* Transform into X when open */
+.hamburger.active span:nth-child(1) { transform: translateY(8px) rotate(45deg); }
+.hamburger.active span:nth-child(2) { opacity: 0; }
+.hamburger.active span:nth-child(3) { transform: translateY(-8px) rotate(-45deg); }
+
+/* ===== MOBILE MENU & RESPONSIVE ===== */
+/* ===== MOBILE MENU BEAUTY UPDATE ===== */
+@media (max-width: 768px) {
+
+  .navbar {
+    top: 0rem !important; /* gently float it down */
+    padding: 0rem 20px;    /* slightly tighter padding so it looks elegant */
+    backdrop-filter: blur(14px) !important;
+  }
+
+  .hamburger span {
+    background: #4B2E05 !important; /* warm brown instead of white */
+  }
+
+  .nav-links {
+    background: rgba(255, 249, 232, 0.94) !important; /* soft cream */
+    backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(75, 46, 5, 0.18); /* soft separator */
+    flex-direction: column;
+    gap: 0.7rem !important; /* was 1.5rem */
+    padding: 0.6rem 0;      /* soften top/bottom space */
+  }
+
+  .nav-links a {
+    color: #4B2E05 !important; /* deep brown text */
+    padding: 0.3rem 0;      /* tighten the vertical rhythm */
+    line-height: 1.2;
+    font-size: 1.2rem;
+    font-weight: 700;
+    letter-spacing: 1.3px;
+    text-transform: uppercase;
+    text-shadow: none !important;
+    transition: color 0.3s ease, transform 0.3s ease;
+  }
+
+  .nav-links a:hover {
+    color: #E4B432 !important; /* sunflower gold highlight */
+    transform: translateX(6px);
+  }
+}
